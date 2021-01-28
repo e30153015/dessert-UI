@@ -1,0 +1,24 @@
+// Custom.scss
+// Option A: Include all of Bootstrap
+
+// @import "../node_modules/bootstrap/scss/bootstrap";
+
+// Optional
+// Custom.scss
+// Option B: Include parts of Bootstrap
+
+// Required
+@import "../node_modules/bootstrap/scss/functions";
+@import "helpers/variables";
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// 通用
+@import "components/utilities";
+@import "components/header";
+@import "components/section";
+@import "components/itemCard";
+@import "components/custom-bs4";
+
+@import "components/product";
+

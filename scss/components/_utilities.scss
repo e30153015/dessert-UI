@@ -1,0 +1,119 @@
+// background
+.bg-cover {
+  background-size: cover;
+  background-position: center center;
+}
+
+// write-mode
+.writing-vertical {
+  writing-mode: vertical-rl;
+}
+
+.writing-md-vertical {
+  @include media-breakpoint-up(md) {
+    writing-mode: vertical-rl;
+  }
+}
+
+// bg, text color, border color
+.bg-primary-lighter {
+  background-color: $primary-200;
+}
+
+.text-primary-light {
+  color: $primary-500 !important;
+}
+
+.text-primary-lighter {
+  color: $primary-200 !important;
+}
+
+.border-primary-lighter {
+  border-color: $primary-200;
+}
+
+$rectangle-height:256px;
+
+.rectangle {
+  height: $rectangle-height;
+  margin-top: -90px;
+
+  &__main {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    writing-mode: vertical-lr;
+    background-color: theme-color('primary');
+    color: white;
+    border-left: 1px solid white;
+    overflow: hidden;
+    z-index: 2;
+
+    &:first-child {
+      border-left: none;
+    }
+
+    &__text {
+      font-size: 24px;
+      letter-spacing: 10px;
+    }
+
+    &__cover {
+      position: absolute;
+      z-index: -1;
+      right: 0px;
+      left: 0px;
+      top: 0px;
+      bottom: 0px;
+      background-color: rgba(theme-color('primary'), .8);
+    }
+
+    &__image {
+      position: absolute;
+      right: -10px;
+      left: -10px;
+      top: -10px;
+      bottom: -10px;
+      filter: blur(5px);
+      z-index: -2;
+      transition: filter .5s;
+    }
+
+    &--active,
+    &:hover,
+    &:focus {
+      color: theme-color('primary');
+      font-weight: bolder;
+      filter: blur(0);
+
+      .rectangle__main__cover {
+        background-color: rgba(theme-color('accent'), .8);
+      }
+    }
+  }
+}
+
+//
+.formRectangle {
+  background: $primary-200;
+
+  &__icon {
+    position: relative;
+    padding-left: 60px;
+    &--position{
+      position: absolute;
+      top:20px;
+      left:20px;
+    }
+  }
+
+  &__input {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+  }
+
+}

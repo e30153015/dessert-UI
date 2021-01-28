@@ -1,0 +1,22 @@
+.listGroup {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bolder;
+
+    &--title {
+        color: white;
+        background: $primary;
+        margin-bottom: 0;
+        padding: $spacer;
+    }
+
+    &__item {
+        &:hover,
+        &:focus {
+            background: $primary-200;
+        }
+        &--active{
+            background: $primary-200;
+        }
+    }
+}
